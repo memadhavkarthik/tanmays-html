@@ -63,6 +63,7 @@ p {
     border: none;
     color: #ffffff;
     cursor: pointer;
+    padding-right: 20px;
 }
 
 @media (max-width: 800px) {
