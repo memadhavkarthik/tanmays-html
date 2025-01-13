@@ -1,18 +1,14 @@
 /* General Styles */
 body {
-    font-family: Georgia, serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #ecf0f1;
+    background-color: #f4f4f9;
+    color: #333;
 }
 
 p {
-    display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    unicode-bidi: isolate;
+    margin: 1em 0;
 }
 
 /* Navbar Styles */
@@ -27,12 +23,17 @@ p {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    transition: background-color 0.3s;
+}
+
+.navbar.scrolled {
+    background-color: #1a252f;
 }
 
 .navbar-title {
-    font-size: 1.2em;
+    font-size: 1.5em;
     color: #ffffff;
-    font-family: 'Dancing Script', cursive;
+    font-family: 'Montserrat', sans-serif;
 }
 
 #navbar-links {
@@ -41,13 +42,18 @@ p {
     gap: 15px;
     margin: 0;
     padding: 0;
-    padding-right: 20px; /* Add padding to the right */
+    padding-right: 15px;
 }
 
 .navbar a {
     color: #ffffff;
     text-decoration: none;
     font-size: 1.1em;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: #1abc9c;
 }
 
 .navbar-toggle {
@@ -57,7 +63,6 @@ p {
     border: none;
     color: #ffffff;
     cursor: pointer;
-    padding-right: 40px;
 }
 
 @media (max-width: 800px) {
@@ -87,9 +92,10 @@ p {
     }
 
     .navbar-title {
-        font-size: 1em; /* Adjust font size if needed */
+        font-size: 1em;
     }
 }
+
 section[id] {
     scroll-margin-top: 60px;
 }
@@ -99,17 +105,17 @@ section[id] {
     background-color: #3498db;
     padding: 50px 20px;
     margin-top: 60px;
+    color: #ffffff;
 }
 
 .banner h1 {
     margin: 0;
     font-size: 3em;
-    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .banner p {
     font-size: 1.2em;
-    color: #ffffff;
 }
 
 .card {
@@ -119,10 +125,17 @@ section[id] {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     max-width: 800px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .card h2 {
     color: #2c3e50;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .dynamic-card {
@@ -164,19 +177,11 @@ section[id] {
     box-shadow: 0 8px 16px rgba(26, 188, 156, 0.6);
 }
 
-.logo-container .row-1 {
-    grid-column: span 3;
-}
-
-.logo-container .row-2 {
-    grid-column: 2 / span 1;
-}
-
 .about-section {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    flex-wrap: wrap;
 }
 
 .about-text {
@@ -213,24 +218,25 @@ section[id] {
 
 @media (max-width: 768px) {
     .about-section {
-        flex-direction: column; /* Stack elements vertically on smaller screens */
+        flex-direction: column;
         align-items: center;
     }
 
     .about-text {
         margin-right: 0;
-        text-align: center; /* Center text on smaller screens */
+        text-align: center;
     }
 
     .profile-container {
         justify-content: center;
-        margin-top: 20px; /* Add some space between text and image */
+        margin-top: 20px;
     }
 
     .profile-pic {
-        max-width: 300px; /* Increase the max width for mobile view */
+        max-width: 300px;
     }
 }
+
 .education-box {
     display: flex;
     align-items: center;
@@ -264,85 +270,6 @@ section[id] {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-.gpa-section {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    white-space: nowrap;
-}
-
-.gpa-logo {
-    max-width: 300px;
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    border: 3px solid #3498db;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.baskin-logo {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    width: 100%;
-}
-
-.gpa-logo:hover {
-    transform: scale(1.2);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.coursework-container {
-    display: flex;
-    justify-content: space-between;
-    padding: 0 70px;
-}
-
-.coursework-column {
-    width: 45%;
-    margin: 0;
-}
-
-.coursework-column ul {
-    line-height: 1.8;
-    margin: 0;
-    padding: 0;
-}
-
-.coursework-column li {
-    margin-bottom: 7px;
-}
-
-.course-images-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-    margin-top: 20px;
-}
-
-.course-image {
-    width: auto;
-    height: 150px;
-    border: 3px solid #1abc9c;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(26, 188, 156, 0.2);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.course-image:hover {
-    transform: scale(2);
-    box-shadow: 0 8px 16px rgba(26, 188, 156, 0.5);
-}
-
-@media (max-width: 600px) {
-    .course-image {
-        height: 150px;
-        max-width: auto;
-    }
-}
-
 .skills-text {
     flex: 3;
     text-align: left;
@@ -369,7 +296,6 @@ section[id] {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Core Competencies/Skills Section Images */
 .skills-content img {
     max-width: 200px;
     width: 100%;
@@ -384,16 +310,11 @@ section[id] {
     transform: scale(1.3);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
-.skills-content .hover-image {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
 
 .hobbies-images {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 0px; /* Reduce the gap between images */
+    gap: 10px;
     justify-content: center;
 }
 
@@ -404,8 +325,8 @@ section[id] {
     border: 3px solid #1abc9c;
     box-shadow: 0 4px 8px rgba(26, 188, 156, 0.1);
     transition: transform 0.3s, box-shadow 0.3s;
-    margin: 10px; /* Add margin to ensure spacing */
-    max-width: 320px; /* Set a maximum width for the images */
+    margin: 10px;
+    max-width: 320px;
 }
 
 .hobbies-images img:nth-child(3) {
@@ -426,8 +347,8 @@ section[id] {
     }
 
     .hobbies-images img {
-        max-width: 250px; /* Ensure the images are not too large on smaller screens */
-        margin: 10px 0; /* Adjust margin for spacing */
+        max-width: 250px;
+        margin: 10px 0;
     }
 }
 
@@ -440,21 +361,16 @@ section[id] {
 .experience-pic {
     max-width: 100%;
     height: auto;
-}
-
-.experience-pic {
-    max-width: 100%;
-    height: auto;
     border-radius: 15px;
-    border: 3px solid #3498db; /* Initial border color */
-    box-shadow: 0 4px 8px rgba(52, 152, 219, 0.4); /* Initial shadow */
+    border: 3px solid #3498db;
+    box-shadow: 0 4px 8px rgba(52, 152, 219, 0.4);
     transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
 }
 
 .experience-pic:hover {
-    transform: scale(1.1); /* Slightly increase the size on hover */
-    box-shadow: 0 8px 16px rgba(52, 152, 219, 0.6); /* Glowing effect */
-    border-color: #1abc9c; /* Change border color on hover */
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(52, 152, 219, 0.6);
+    border-color: #1abc9c;
 }
 
 .image-row {
@@ -481,7 +397,7 @@ section[id] {
 .achievements-images {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 10px; /* Adjust the gap as needed */
+    gap: 10px;
     justify-content: center;
     margin-top: 20px;
 }
@@ -493,8 +409,8 @@ section[id] {
     border: 3px solid #1abc9c;
     box-shadow: 0 4px 8px rgba(26, 188, 156, 0.1);
     transition: transform 0.3s, box-shadow 0.3s;
-    margin: 10px; /* Add margin to ensure spacing */
-    max-width: 250px; /* Set a maximum width for the images */
+    margin: 10px;
+    max-width: 250px;
 }
 
 .achievements-images img:nth-child(3) {
@@ -515,18 +431,37 @@ section[id] {
     }
 
     .achievement-image {
-        max-width: 250px; /* Ensure the images are not too large on smaller screens */
-        margin: 10px 0; /* Adjust margin for spacing */
+        max-width: 250px;
+        margin: 10px 0;
     }
 }
 
 .footer {
-    text-align: center; /* Center the text */
-    width: 100%; /* Ensure the footer spans the full width */
-    position: static; /* Fix the footer at the bottom */
-    bottom: 0; /* Position the footer at the bottom */
-    background-color: #2c3e50; /* Optional: Add a background color */
-    color: #ffffff; /* Optional: Set the text color */
-    padding: 10px; /* Add some padding for spacing */
-    box-sizing: border-box; /* Include padding in the element's total width and height */
+    text-align: center;
+    width: 100%;
+    position: static;
+    bottom: 0;
+    background-color: #2c3e50;
+    color: #ffffff;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.footer p {
+    margin: 0;
+}
+
+.footer .social-icons {
+    margin-top: 10px;
+}
+
+.footer .social-icons a {
+    color: #ffffff;
+    margin: 0 10px;
+    font-size: 1.5em;
+    transition: color 0.3s;
+}
+
+.footer .social-icons a:hover {
+    color: #1abc9c;
 }
